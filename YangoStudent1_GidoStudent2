@@ -1,0 +1,164 @@
+# This is the Movie class
+class Movie:
+    def __init__(self, title, genre, actor, director, duration):
+        self.title = title
+        self.genre = genre
+        self.actor = actor
+        self.director = director
+        self.duration = duration
+
+    def get_title(self):
+        return self.title
+
+    def get_genre(self):
+        return self.genre
+
+    def get_actor(self):
+        return self.actor
+
+    def get_director(self):
+        return self.director
+
+    def get_duration(self):
+        return self.duration
+
+# This is the Boxer class
+class Boxer:
+    def __init__(self, name, height, weight, record, country):
+        self.name = name
+        self.height = height
+        self.weight = weight
+        self.record = record
+        self.country = country
+
+    def get_name(self):
+        return self.name
+
+    def jab(self):
+        print(f"{self.name} performs a jab.")
+
+    def hook(self):
+        print(f"{self.name} performs a hook.")
+
+    def hydrate(self):
+        print(f"{self.name} hydrates before the match.")
+
+    def defense(self):
+        print(f"{self.name} focuses on defense during the match.")
+
+# This is the MusicAlbum class
+class MusicAlbum:
+    def __init__(self, artist_name, album_name, producer, genre):
+        self.artist_name = artist_name
+        self.album_name = album_name
+        self.producer = producer
+        self.genre = genre
+        self.songs = []
+
+    def add_song(self, song_title):
+        self.songs.append(song_title)
+        print(f"Added song '{song_title}' to the album '{self.album_name}' by {self.artist_name}")
+
+    def get_artist_name(self):
+        return self.artist_name
+
+    def get_album_name(self):
+        return self.album_name
+
+    def get_producer(self):
+        return self.producer
+
+    def get_genre(self):
+        return self.genre
+
+# This is the Student class
+class Student:
+    def __init__(self, student_name, student_number, major, year_level, department):
+        self.student_name = student_name
+        self.student_number = student_number
+        self.major = major
+        self.year_level = year_level
+        self.department = department
+
+    def get_student_name(self):
+        return self.student_name
+
+    def get_student_number(self):
+        return self.student_number
+
+    def get_major(self):
+        return self.major
+
+    def get_year_level(self):
+        return self.year_level
+
+    def get_department(self):
+        return self.department
+
+# This is the Fan class
+class Fan:
+    def __init__(self, brand, color, size, wattage, serial_number):
+        self.brand = brand
+        self.color = color
+        self.size = size
+        self.wattage = wattage
+        self.serial_number = serial_number
+
+    def get_brand(self):
+        return self.brand
+
+    def low_power(self):
+        print("Fan is running on low power.")
+
+    def mid_power(self):
+        print("Fan is running on medium power.")
+
+    def high_power(self):
+        print("Fan is running on high power.")
+
+    def oscillate(self):
+        print("Fan is oscillating.")
+
+def main():
+    # Movie main program
+    movie = Movie("Titanic", "Romance and Tragedy", "Kate Winslet", "James Cameron", 194)
+    print(f"Movie Title: {movie.get_title()}")
+    print(f"Genre: {movie.get_genre()}")
+    print(f"Actor: {movie.get_actor()}")
+    print(f"Director: {movie.get_director()}")
+    print(f"Duration: {movie.get_duration()} minutes")
+ 
+    # Boxer main program
+    boxer = Boxer("Manny Pacquiao", "5'5\"", "145 lbs", "62-8-2", "Philippines")
+    print(f"Boxer Name: {boxer.get_name()}")
+    boxer.jab()
+    boxer.hook()
+    boxer.hydrate()
+    boxer.defense()
+    #  MusicAlbum main program
+    album = MusicAlbum("Rihanna", "Loud", "Rihanna and L.A. Reid", "Pop Music and R&B")
+    album.add_song("California King Bed")
+    album.add_song("Raining Men")
+    print(f"Artist: {album.get_artist_name()}")
+    print(f"Album: {album.get_album_name()}")
+    print(f"Producer: {album.get_producer()}")
+    print(f"Genre: {album.get_genre()}")
+
+     # Student main program
+    student = Student("Sandra", "2007-82356", "English", "Junior", "Education")
+    print(f"Student Name: {student.get_student_name()}")
+    print(f"Student Number: {student.get_student_number()}")
+    print(f"Major: {student.get_major()}")
+    print(f"Year Level: {student.get_year_level()}")
+    print(f"Department: {student.get_department()}")
+
+    # Fan main program
+    fan = Fan("Hanabishi", "Gray", "Large", 70, "17035F8Y8A")
+    print(f"Brand: {fan.get_brand()}")
+    fan.low_power()
+    fan.mid_power()
+    fan.high_power()
+    fan.oscillate()
+
+if __name__ == "__main__":
+    main()
