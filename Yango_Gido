@@ -1,0 +1,109 @@
+# This is the Boxer class from Assignment #2
+# Within the Boxer class exists a constructor responsible for initializing fundamental attributes
+# This class includes methods for getting the name and executing boxing movements
+class Boxer:
+    def __init__(self, name, height, weight, record, country):
+        self.name = name
+        self.height = height
+        self.weight = weight
+        self.record = record
+        self.country = country
+
+    def get_name(self):
+        return self.name
+
+    def jab(self):
+        print(f"{self.name} performs a jab.")
+
+    def hook(self):
+        print(f"{self.name} performs a hook.")
+
+    def hydrate(self):
+        print(f"{self.name} hydrates before the match.")
+
+    def defense(self):
+        print(f"{self.name} focuses on defense during the match.")
+
+# Main Program
+# This is the ChampionBoxer class
+# Derived from the Boxer class, the ChampionBoxer class inherits its attributes
+# The constructor uses "super()"" to call the parent class constructor and initializes "championships" attribute
+# using a double underscore prefix for "__championships" we will achieve Encapsulation 
+# Additional methods are added: train and celebrate victories
+class ChampionBoxer(Boxer):
+    def __init__(self, name, height, weight, record, country, championships):
+        super().__init__(name, height, weight, record, country)
+        self.__championships = championships  # Encapsulated private attribute
+
+    def get_championships(self):
+        return self.__championships
+
+    def train(self):
+        print(f"{self.name} engages in an intense training regimen in preparation for his upcoming match..")
+
+    def pray_celebrate_victory(self):
+        print(f"{self.name} prays and celebrates victory after winning a match.")
+
+
+# This is creating an instance of ChampionBoxer
+# A particular instance of ChampionBoxer is generated, customized with specific attributes corresponding to Manny Pacquiao
+champion_boxer = ChampionBoxer("Manny Pacquiao", 165, 145, "62-8-2", "Philippines", 12)
+
+# Accessing inherited methods from Boxer class
+# This instance grants access to inherited methods from the Boxer class
+print("Name:", champion_boxer.get_name())
+champion_boxer.jab()
+champion_boxer.hook()
+champion_boxer.hydrate()
+champion_boxer.defense()
+
+# Accessing methods from ChampionBoxer class
+# This instance grants access to inherited methods from the ChampionBoxer class
+print("Championships:", champion_boxer.get_championships())
+champion_boxer.train()
+champion_boxer.pray_celebrate_victory()
+
+# This is the Movie class taken out of the 5 classes from Assignment #2   	
+class Movie:
+    def __init__(self, t, g, a, d, dur):
+        self._title = t
+        self._genre = g
+        self._actor = a
+        self._director = d
+        self._duration = dur
+        
+# Getter methods for accessing private attributes
+    def get_title(self):
+        return self._title
+
+    def get_genre(self):
+        return self._genre
+
+    def get_actor(self):
+        return self._actor
+
+    def get_director(self):
+        return self._director
+
+    def get_duration(self):
+        return self._duration
+
+    def get_duration(self):
+        return f"{self._duration} minutes" # Return the duration with "minutes" unit
+# This is the MustSeeMovie class derived from the Movie class
+class MustSeeMovie(Movie):
+    def __init__(self, t, a, d, dur, humor_style):
+        # Call the superclass constructor and specialize attributes
+        super().__init__(t, "Comedy", a, d, dur)
+        self._comedy_style = humor_style
+# Getter method specific to MustSeeMovie
+    def get_comedy_style(self):
+        return self._comedy_style
+
+# Main Program
+iw = MustSeeMovie("The Martian", "Matt Damon", "Ridley Scott", 144, "Self-defeating")
+print("Title:", iw.get_title())
+print("Genre:", iw.get_genre())
+print("Actor:", iw.get_actor())
+print("Duration:", iw.get_duration())
+print("Comedy Style:", iw.get_comedy_style())
